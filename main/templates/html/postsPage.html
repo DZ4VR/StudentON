@@ -1,0 +1,13 @@
+{% extends "html/wrapper.html" %}
+{% block newsPage %}
+    <div class="container">
+        <h1>Новости:</h1>
+        <br>
+        {% for post in articles %}
+            <hr>
+            <a href="/news/{{post.id}}" class="text-info"><h4>{{post.title}}</h4></a>
+            <h5>{{post.date|date:"d-m-y"}}</h5>
+            <hr>
+        {% endfor %}
+    </div>
+{% endblock %}

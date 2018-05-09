@@ -1,0 +1,12 @@
+{% extends 'html/wrapper.html' %}
+
+
+{% block login %}
+    <div class="container">
+                <form action="/auth/register/" method="post">
+                    {% csrf_token %}
+                        {{ form }}
+                        <input class="btn-warning"  type="submit" value="Регистрация">
+                </form>
+    </div>
+{% endblock %}

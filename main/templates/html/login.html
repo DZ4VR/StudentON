@@ -1,0 +1,20 @@
+{% extends 'html/wrapper.html' %}
+
+{% block login %}
+    <div class="container">
+        <form action="/auth/login/" method="post">
+            {% csrf_token %}
+                <input type="text" name='username' id="username">
+                <label for="username">Имя пользователя</label>
+                <br>
+                <input type="password" name="password" id="password">
+                <label for="password">Пароль</label>
+                    {% if login_error %}
+                        <label class="text-warning">{{ login_error }}</label>
+                    {% endif %}
+                <br>
+                <input class="btn-success" type="submit" value="Войти">
+                <a class="btn-warning"  href="/auth/register/" >Регистрация</a>
+        </form>
+    </div>
+{% endblock %}

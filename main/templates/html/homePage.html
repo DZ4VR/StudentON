@@ -1,0 +1,16 @@
+{% extends "html/wrapper.html" %}
+{% block homePage %}
+    <div class="container">
+       {% for part in homePageContent %}
+           <h1>{{ part.heading }}</h1>
+           <p style="white-space: pre-line;">{{ part.paragraph }}</p>
+           {% if part.img %}
+                {% if part.img_height == '0' and part.img_width == '0'%}
+                   <img src="{{part.img.url}}"  alt="{{part.img}}" class="img-fluid">
+                {% else %}
+                    <img src="{{part.img.url}}"  alt="{{part.img}}" width="{{part.img_width}}%" height="{{part.img_height}}%">
+                {% endif %}
+            {% endif %}
+       {% endfor %}
+    </div>
+{% endblock %}

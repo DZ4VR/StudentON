@@ -1,0 +1,10 @@
+{% extends "html/wrapper.html" %}
+{% block newsPage %}
+    <div class="container">
+        <h2 class="text-info text-center">{{article.title}}</h2>
+        <h6 class="text-center">{{article.date|date:"опубликовано d-m-y в H:i:s"}}</h6>
+        <p class="text-center">{{ article.post|safe}}</p>
+        <br>
+        <img src='{{ article.img.url }}' class="img-fluid">
+    </div>
+{% endblock %}
